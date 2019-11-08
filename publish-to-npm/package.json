@@ -1,0 +1,36 @@
+{
+    "name": "npm-publish-action",
+    "version": "0.0.1",
+    "description": "GitHub action to automatically publish packages to npm",
+    "author": {
+        "name": "NineSwordsMonster",
+        "email": "wangjia_1919@163.com"
+    },
+    "license": "MIT",
+    "private": true,
+    "bin": {
+      "npm-publish-action": "./index.js"
+    },
+    "scripts": {
+      "lint": "eslint ."
+    },
+    "devDependencies": {
+      "eslint": "^6.5.1"
+    },
+    "eslintConfig": {
+      "parserOptions": {
+        "ecmaVersion": 2017,
+        "sourceType": "module"
+      },
+      "extends": [
+        "eslint:recommended"
+      ],
+      "env": {
+        "node": true,
+        "es6": true
+      },
+      "rules": {
+        "no-console": "off"
+      }
+    }
+  }
