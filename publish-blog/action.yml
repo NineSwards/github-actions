@@ -1,0 +1,16 @@
+name: GitHub blog build
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    name: site build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Vuepress
+        run: npm install -g vuepress
+      - name: install package
+        run: npm install
+      - name: Build Package
+        run: npm run build
