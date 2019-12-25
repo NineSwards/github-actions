@@ -1,6 +1,6 @@
 name: k8s image sync
 description: An action for Kubernetes gcr.io image Sync
-author: imaguowei@gmail.com
+author: wangjia_1919@163.com
 branding:
   color: blue
   icon: code
