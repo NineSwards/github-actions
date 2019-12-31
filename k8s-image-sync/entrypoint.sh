@@ -11,20 +11,14 @@ images=$(./kubeadm config images list --kubernetes-version=${KUBERNETES_VERSION}
 
 echo "image list: ${images}"
 
-#echo "${INPUT_PASSWORD}" | docker login -u ${INPUT_USERNAME} --password-stdin ${INPUT_REGISTRY}
-echo "${INPUT_PASSWORD}"
-echo "${INPUT_REGISTRY}"
-echo "${INPUT_USERNAME}"
+echo "${INPUT_PASSWORD}" | docker login -u ${INPUT_USERNAME} --password-stdin ${INPUT_REGISTRY}
 
 while IFS='/' read key value; do
     image=${key}/${value}
-    echo "${image}"
     docker pull ${image}
     new_image=${INPUT_REPOSITORY}/${value}
-    echo "${new_image}"
     if [ -n "${INPUT_REGISTRY}" ]; then
         new_image=${INPUT_REGISTRY}/${new_image}
-        echo "${new_image}"
     fi
     docker tag ${image} ${new_image}
     docker push ${new_image}
