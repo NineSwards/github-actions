@@ -5,21 +5,21 @@ branding:
   color: blue
   icon: code
 inputs:
+  token:
+    description: 'Token used to login docker registry'
+    required: true
   username:
     description: 'Username used to login docker registry'
-    required: true
-  password:
-    description: 'Password used to login docker registry'
     required: true
   registry:
     description: 'Docker registry server address'
     required: false
     default: ''
   repository:
-    description: 'docker image repository name'
+    description: 'Docker image repository name'
     required: true
   kubernetes_version:
-    description: 'set kubernetes version'
+    description: 'Set kubernetes version'
     required: false
 runs:
   using: 'docker'
