@@ -13,7 +13,7 @@ echo "image list: ${images}"
 
 #echo "${INPUT_PASSWORD}"  | docker login ${INPUT_REGISTRY} --username ${INPUT_USERNAME} --password-stdin
 #echo "${INPUT_PASSWORD}" | docker login -u ${INPUT_USERNAME} --password-stdin ${INPUT_REGISTRY}
-docker login -u ${INPUT_USERNAME} -p ${TOKEN} docker.pkg.github.com
+docker login -u ${INPUT_USERNAME} -p ${INPUT_TOKEN} docker.pkg.github.com
 
 # docker tag IMAGE_ID docker.pkg.github.com/NineSwordsMonster/repository-name/IMAGE_NAME:VERSION
 while IFS='/' read key value; do
@@ -24,7 +24,7 @@ while IFS='/' read key value; do
     if [ -n "${INPUT_REGISTRY}" ]; then
         new_image=${INPUT_REGISTRY}/${new_image}
     fi
-    echo "new image >> ${image} <<"
+    echo "new image >> ${new_image} <<"
     docker tag ${image} ${new_image}
     docker push ${new_image}
 done <<< ${images}
