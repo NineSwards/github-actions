@@ -9,9 +9,9 @@ curl -O -L https://storage.googleapis.com/kubernetes-release/release/${KUBERNETE
 chmod +x kubeadm
 images=$(./kubeadm config images list --kubernetes-version=${KUBERNETES_VERSION})
 
-echo "image list: ${images}"
+echo "image list: \n${images}"
 
-echo "${INPUT_GITHUB_DOCKER_PASSWORD}" | docker login -u ${INPUT_GITHUB_DOCKER_USERNAME} --password-stdin ${INPUT_REGISTRY}
+echo "${INPUT_GITHUB_DOCKER_PASSWORD}" | docker login ${INPUT_REGISTRY} --username ${INPUT_GITHUB_DOCKER_USERNAME} --password-stdin 
 
 while IFS='/' read key value; do
     image=${key}/${value}
