@@ -6,18 +6,22 @@ branding:
   icon: code
 inputs:
   token:
-    description: 'Token used to login docker registry'
+    description: 'Token used to login github docker package'
     required: true
   username:
-    description: 'Username used to login docker registry'
+    description: 'Username used to login github docker package'
+    required: true
+  password:
+    description: 'Password used to login docker registry'
     required: true
   registry:
-    description: 'Docker registry server address'
+    description: 'Github docker package registry server address'
     required: false
-    default: ''
+    default: 'docker.pkg.github.com'
   repository:
-    description: 'Docker image repository name'
+    description: 'Github docker package repository name'
     required: true
+    default: ''
   kubernetes_version:
     description: 'Set kubernetes version'
     required: false
