@@ -11,9 +11,9 @@ inputs:
   username:
     description: 'Username used to login github docker package'
     required: true
-  password:
-    description: 'Password used to login docker registry'
-    required: true
+  # password:
+  #   description: 'Password used to login docker registry'
+  #   required: true
   registry:
     description: 'Github docker package registry server address'
     required: false
