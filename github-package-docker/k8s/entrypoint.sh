@@ -11,7 +11,7 @@ images=$(./kubeadm config images list --kubernetes-version=${KUBERNETES_VERSION}
 
 echo "image list: ${images}"
 
-echo "${INPUT_PASSWORD}" | docker login --username ${INPUT_USERNAME} --password-stdin ${INPUT_REGISTRY}
+echo "${INPUT_TOKEN}" | docker login --username ${INPUT_USERNAME} --password-stdin ${INPUT_REGISTRY}
 
 # docker tag IMAGE_ID docker.pkg.github.com/NineSwordsMonster/repository-name/IMAGE_NAME:VERSION
 while IFS='/' read key value; do
